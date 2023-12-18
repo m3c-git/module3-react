@@ -15,7 +15,15 @@ function App(pros) {
 
   return (
     <>
-       {students.map((student, i) => <li key={i}>{student[i]}</li>)}
+      <section>
+          <h2>Étudiant-e-s</h2> 
+          <ul>
+            {students.map((student, i) => <li key={i}> 
+              <Student  data={student}/>
+            </li>)}
+          </ul>
+      </section>
+       
    </>
   )
 }
