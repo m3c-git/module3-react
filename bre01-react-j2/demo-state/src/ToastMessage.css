@@ -1,0 +1,13 @@
+.toastMessage {
+    background: cyan;
+    display: flex;
+}
+button{
+    background: cyan !important;
+}
+
+
+
+.dismissed p{
+    display: none;
+}
