@@ -7,64 +7,94 @@ const SignUpForm = (props) => {
         lastName : "",
         email : "",
         password : "",
-        confirmPassword : ""
+        confirmPassword : "",
+        pass: ""
 
 
     });
 
     const handleChangeFirstName = (event) => {
-        setValue({
-            submitted: false,
-            firstName : event.target.value
-        });
+        let newState = Object.assign({}, value, {firstName:event.target.value});
+        setValue(newState);
     };
 
     const handleChangeLastName = (event) => {
-        setValue({
-            submitted: false,
-            lastName : event.target.value
-        });
+        let newState = Object.assign({}, value, {lastName:event.target.value});
+        setValue(newState);
     };
 
     const handleChangeMail = (event) => {
-        setValue({
-            submitted: false,
-            email : event.target.value
-        });
+        let newState = Object.assign({}, value, {email:event.target.value});
+        setValue(newState);
     };
 
     const handleChangeConfirmPassword = (event) => {
-        setValue({
-            submitted: false,
-            confirmPassword : event.target.value
-            
-        });
+        let newState = Object.assign({}, value, {password:event.target.value});
+        setValue(newState);
     };
 
     const handleChangePassword = (event) => {
-        setValue({
-            submitted: false,
-            password : event.target.value
-            
-        });
+        let newState = Object.assign({}, value, {confirmPassword:event.target.value});
+        setValue(newState);
     };
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        setValue({
-            submitted: true,
-            email : event.target.email.value,
-            password : event.target.password.value
-        });
+        let newState = Object.assign({}, value, {submitted:true});
+        setValue(newState);
     };
 
-    const  source = value.password;
-    const  target = value.ConfirmPassword;
+
+    
+
 
     return (
         <>
             {
                 value.submitted === false && (
+                    <form onSubmit={handleSubmit}>
+                        <fieldset>
+                            <label htmlFor="firstName">
+                                Prénom
+                            </label>
+                            <input type="text" name="firstName" id="firstName" onChange={handleChangeFirstName}/>
+                        </fieldset>
+                        <fieldset>
+                            <label htmlFor="lastName">
+                                Nom
+                            </label>
+                            <input type="text" name="lastName" id="lastName"  onChange={handleChangeLastName}/>
+                        </fieldset>
+                        <fieldset>
+                            <label htmlFor="email">
+                                Email
+                            </label>
+                            <input type="email" name="email" id="email" onChange={handleChangeMail}/>
+                        </fieldset>
+                        <fieldset>
+                            <label htmlFor="password">
+                                Mot de passe
+                            </label>
+                            <input type="password" name="password" id="password" onChange={handleChangePassword}/>
+                        </fieldset>
+                        <fieldset>
+                            <label htmlFor="confirmPassword">
+                                Confirmer le Mot de passe
+                            </label>
+                            <input type="password" name="confirmPassword" id="confirmPassword" onChange={handleChangeConfirmPassword}/>
+                        </fieldset>
+                        {value.password === value.confirmPassword && (
+                        <button type="submit">Inscription</button>
+                    
+                    )}
+                        
+                    </form>
+                )
+            }
+
+            { 
+
+                value.submitted === true && (
                     <form onSubmit={handleSubmit}>
                         <fieldset>
                             <label for="firstName">
@@ -76,7 +106,7 @@ const SignUpForm = (props) => {
                             <label for="lastName">
                                 Nom
                             </label>
-                            <input type="text" name="lastName" id="lastName"  value={value.lastname} onChange={handleChangeLastName}/>
+                            <input type="text" name="lastName" id="lastName"  value={value.lastName} onChange={handleChangeLastName}/>
                         </fieldset>
                         <fieldset>
                             <label for="email">
@@ -94,22 +124,12 @@ const SignUpForm = (props) => {
                             <label for="confirmPassword">
                                 Confirmer le Mot de passe
                             </label>
-                            <input type="password" name="confirmPassword" id="confirmPassword" value={value.email} onChange={handleChangePassword}/>
-                        </fieldset>
-                        <button type="submit">Inscription</button>
+                            <input type="password" name="confirmPassword" id="confirmPassword" value={value.confirmPassword} onChange={handleChangeConfirmPassword}/>
+                        </fieldset>                    
+                        <p>Dernier utilisateur : {value.firstName} {value.lastName}</p>
                     </form>
                 )
-            }
-
-            { 
-
-                value.submitted === true && (
-                    value.password === value.confirmPassword && (
-                        
-                    <p>Vous êtes  inscript</p>
-                    )
-                    
-                )
+                
             }
             
             
