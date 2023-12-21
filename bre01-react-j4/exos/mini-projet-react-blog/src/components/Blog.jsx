@@ -12,7 +12,7 @@ const Blog = (props)=>{
                     <article>
                         <header>
                             <figure>
-                                <img src={blogPost.image} alt="Image aléatoire de démonstration"/>
+                                <img src={blogPost.thumbnail} alt="Image aléatoire de démonstration"/>
                             </figure>
                             <h2>
                             {blogPost.title}
@@ -27,7 +27,7 @@ const Blog = (props)=>{
                             </p>
                         </section>
                         <footer>
-                            <button>Lire l'article</button>
+                            <button onClick={props.articleChoice(i)}><a href="">Lire l'article</a></button>
                         </footer>
                     </article>
                 </li>)}

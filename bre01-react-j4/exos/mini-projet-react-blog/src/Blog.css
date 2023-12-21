@@ -50,8 +50,11 @@ ul{
 
 }
 
-section{
+
+
+section article:not(.post){
     height: 12rem;
+
 }
 
 li{

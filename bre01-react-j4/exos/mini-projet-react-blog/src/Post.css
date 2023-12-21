@@ -1,0 +1,58 @@
+
+
+.post {
+    max-width: 1280px;
+    margin: 0 auto;
+
+}
+
+
+
+.post header  img{
+    width: 100%;    
+    height: auto;
+    margin: 0 auto;
+    
+    }
+
+.post header  h1{
+    color: #7209b7;
+    text-align: center;
+    background: white;
+    width: 100%;
+    }
+
+    .post section p{
+        color: black !important;
+    }
+
+    code{
+        background: black;
+        color: white;
+        padding: 0.5rem;
+    }
+    
+.post footer article{
+    display: flex;
+    padding-bottom: 2rem;
+
+}
+
+.post footer article p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    background: #4361ee;
+    color: white;
+
+    
+}
+
+.post footer article img{
+
+    width: 100px;
+    height: 100px;
+    
+}

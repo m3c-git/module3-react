@@ -8,8 +8,14 @@ import Blog from './components/Blog'
 
 function App() {
   const [state, setState] = useState({
-    currentPost : null
+    currentPost : false
   })
+  
+
+  const articleChoice = (postNb) =>{
+     state.currentPost = postNb
+   
+  }
   return (
     <>
       {state.currentPost === null &&(
