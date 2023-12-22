@@ -4,26 +4,24 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Post from './components/Post'
 import Blog from './components/Blog'
+import {blogPosts} from "./data/data.js";
 
 
 function App() {
   const [state, setState] = useState({
-    currentPost : false
+    currentPost : null,
+    postNb : 0
   })
   
-
-  const articleChoice = (postNb) =>{
-     state.currentPost = postNb
-   
-  }
+  // state.currentPost ou state.currentPost permet de recupérer un element de l'objet state.
   return (
     <>
       {state.currentPost === null &&(
-        <Blog />
+        <Blog  posts={blogPosts} post={(postNb) => setState({currentPost : postNb})}/>
       )}
 
       {state.currentPost !== null &&(
-        <Post />
+        <Post post={blogPosts[state.currentPost]} posts={() => setState({currentPost : null})}/>
       )}
       
     </>

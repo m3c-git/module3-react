@@ -1,7 +1,7 @@
 import '../Blog.css'
-import {blogPosts} from "../data/data.js";
 
 const Blog = (props)=>{
+    const blogPosts = props.posts;
     
     return (
         <>
@@ -27,7 +27,7 @@ const Blog = (props)=>{
                             </p>
                         </section>
                         <footer>
-                            <button onClick={props.articleChoice(i)}><a href="">Lire l'article</a></button>
+                            <button onClick={() => props.post(i)}>Lire l'article</button>
                         </footer>
                     </article>
                 </li>)}
