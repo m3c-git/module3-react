@@ -19,7 +19,7 @@ const Post = (props) => {
                         <img src="https://i.pravatar.cc/150?img=69" alt="Image de profil de Jean Dupont, Développeur React expérimenté" />
                         <p>par Jean Dupont, Développeur React expérimenté</p>
                     </article>
-                    <button onClick={() => props.posts}>Retour au blog</button>
+                    <button onClick={props.posts}>Retour au blog</button>
                 </footer>
             </article>
         
