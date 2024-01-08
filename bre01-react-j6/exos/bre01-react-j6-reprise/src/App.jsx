@@ -1,21 +1,27 @@
 import { useState } from 'react'
-import { posts } from "./data.js";
+import { posts } from "./data/data.js";
 import { Posts } from "./components/Posts.jsx";
+import { PostForm } from './components/PostForm.jsx';
 import './App.css'
 
 function App() {
-    const [state, setState] = useState({
-        posts : posts
-    });
+  const [state, setState] = useState({
+      posts : posts
+  });
 
-  return (
-    <>
-        <Posts posts={state.posts} />
-        <section className="add-post">
+  const addPost = (post) => {
 
-        </section>
-    </>
-  )
+      let posts = state.posts;
+      posts.push(post);
+
+      setState({posts : posts});
+  }
+
+return (
+  <>
+      <Posts posts={state.posts} />
+      <PostForm handleSubmit={ (post) => { addPost(post) }}/>
+  </>
+)
 }
-
 export default App
