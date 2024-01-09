@@ -1,0 +1,9 @@
+=> je vais devoir utiliser une condition pour savoir quoi afficher
+
+=> appuyer sur bouton va modifier le state et me dire quel post afficher
+
+=> le post recevra l'id du post à afficher
+
+=> puis utilisera un effet pour interroger l'API
+
+=> et afficher les infos

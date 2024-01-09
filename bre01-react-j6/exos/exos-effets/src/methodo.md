@@ -4,7 +4,7 @@
 
 Créer le projet React avec vite qui sera utiliser pour l'ensemble des exercices.
 
-Créer un composant pour l'exercice 1 qui utilisera useEffect pour faire une requête fetch vers une API (API pour génération de contenu aléatoire) qui affichera les 5 premiers articles renvoyé par l'API.
+Créer un composant pour l'exercice 1 qui utilisera useEffect pour faire une requête fetch vers une API (API pour génération de contenu aléatoire) qui affichera les 5 premiers articles renvoyé par l'API. il faudra utiliser map.
 
 ## Exercices 2:
 

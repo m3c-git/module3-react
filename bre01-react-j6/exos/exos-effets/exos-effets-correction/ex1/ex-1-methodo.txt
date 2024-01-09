@@ -1,0 +1,7 @@
+=> il me faut un composant qui affichera les posts
+
+=> dans l'app je vais devoir avoir un state qui contient les posts et un effet pour les charger
+
+=> je vais devoir passer la liste des posts dans les props du composant
+
+=> je vais devoir coder quelque chose pour récupérer uniquement les 5 premiers

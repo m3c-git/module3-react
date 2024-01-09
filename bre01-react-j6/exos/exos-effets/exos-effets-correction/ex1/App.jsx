@@ -1,17 +1,12 @@
-import { useState, useEffect} from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState, useEffect } from 'react';
+import Ex1Posts from "./components/ex-1/Posts.jsx";
 import './App.css'
-import PostList from './components/PostList.jsx'
+import Ex2Posts from "./components/ex-2/Posts.jsx";
 
 function App() {
   const [state, setState] = useState({
-      currentPost : null,
-      posts : []
-
+      posts : [],
   });
-
- 
 
   // Array.slice : https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Array/slice
   useEffect(() => {
@@ -30,9 +25,7 @@ function App() {
 
   return (
     <>
-        
-        <PostList posts={state.posts} />
-
+        <Ex1Posts posts={state.posts} />
     </>
   )
 }
